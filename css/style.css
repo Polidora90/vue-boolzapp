@@ -6,6 +6,16 @@
 
 body {
     background-color: #dadbd5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.text-grey {
+    color: #808080;
+}
+
+.flex-grow {
+    flex-grow: 1;
 }
 
 /* .background-banner {
@@ -15,11 +25,194 @@ body {
     top: 0px;
 } */
 
+/* CONTAINER */
 .container {
     max-width: 1200px;
     margin: auto;
     height: 90vh;
-    background-color: white;
+    background-color: #ededed;
     margin-top: 43px;
+    display: flex;
+}
 
+/* DUE BLOCCHI PRINCIPALI */
+.left-block {
+    flex-basis: 30%;
+}
+
+.right-block {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* BLOCCO DI SX */
+/* toolbar */
+.toolbar,
+.chat-text-input {
+    border: 1px solid #d7d7d7;
+    height: 60px;
+    padding: 4px;
+    display: flex;
+}
+
+.my-avatar-container img,
+.contact-avatar img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.tools-container {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tools-container .fa {
+    color: #808080;
+    font-size: 14px;
+}
+
+.contact-avatar,
+.my-avatar-container {
+    width: 60px;
+}
+
+.chat-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* attiva notifiche */
+.options-bar {
+    background-color: #9ee1fe;
+    height: 80px;
+    display: flex;
+    padding: 7px;
+}
+
+.bell-container {
+    background-color: white;
+    border-radius: 50%;
+    width: 66px;
+    position: relative;
+}
+
+.bell-container .fa {
+    color: #9ee1fe;
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.options-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+/* input cerca */
+.input-container {
+    padding: 2px 7px;
+    height: 35px;
+}
+
+
+.search-input {
+    background-color: white;
+    border-radius: 15px;
+    height: 100%;
+    display: flex;
+}
+
+.search-input input {
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+
+}
+
+.search-input .fa {
+    font-size: 14px;
+    padding: 8px;
+}
+
+/* lista contatti */
+.user {
+    border: 1px solid #d7d7d7;
+    background-color: white;
+    display: flex;
+}
+
+.user:hover {
+    background-color: #d7d7d7;
+}
+
+.user-img {
+    height: 70px;
+    padding: 7px;
+}
+
+.user-img img {
+    height: 100%;
+    border-radius: 50%;
+}
+
+.contact-list {
+    overflow: auto;
+}
+
+/* finestra di chat */
+.chat-wall {
+    background-image: url(../imgs/mine.jpg);
+    overflow: auto;
+}
+
+.sent,
+.received {
+max-width: 250px;
+text-align: center;
+margin: 10px 15px;
+border-radius: 5px;
+}
+
+.sent {
+    background-color: rgb(151, 240, 151);
+}
+
+.received {
+    background-color: white;
+}
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-top: 10px solid #f00;
+}
+
+
+/* input testo chat */
+.chat-text-input .fa {
+    font-size: 20px;
+    padding: 16px;
+}
+
+.chat-text-input input {
+    border-radius: 25px;
+    border: none;
+    padding-left: 10px;
+}
+
+.no-focus:focus {
+    outline: none;
 }

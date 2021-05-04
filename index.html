@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Boolzapp</title>
 
@@ -11,19 +12,102 @@
 </head>
 <body>
     <div id="app">
-        <!-- <div class="background-banner"></div> -->
+        <div class="background-banner"></div>
         <div class="container">
-            <div>
+            <div class="left-block">
                 <!-- toolbar -->
+                <div class="toolbar">
+                    <div class="my-avatar-container">
+                        <img src="imgs/avatar_io.jpg" alt="">
+                    </div>
+                    <div class="flex-grow"></div>
+                    <div class="tools-container">
+                        <div>
+                            <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- barra attiva notifiche -->
+                <div class="options-bar">
+                    <div class="bell-container">
+                        <i class="fa fa-bell-slash-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="options-text">
+                        <p><strong>Ricevi notifiche di nuovi messaggi</strong></p>
+                        <p class="text-grey">Attiva notifiche desktop</p>
+                    </div>
+                </div>
+
                 <!-- input cerca -->
+                <div class="input-container">
+                    <div class="text-grey search-input">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <input class="no-focus" type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+
                 <!-- lista contatti in flex grow-->
+                <div class="flex-grow contact-list">
+                    <div class="user" v-for="user in usersList">
+                        <div class="user-img">
+                            <img :src="user.avatar" alt="">
+                        </div>
+                        <div class="chat-preview flex-grow" @click="selectUserChat(user)">
+                            <p><strong>{{user.name}}</strong></p>
+                            <p class="text-grey">Anteprima non disponibile</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div>
+            <!-- BLOCCO DI DESTRA -->
+            <div class="right-block">
                 <!-- toolbar user active -->
+                <div class="toolbar">
+                    <div class="contact-avatar">
+                        <img :src="activeUser.avatar" alt="">
+                    </div>
+                    <div class="chat-preview">
+                        <p><strong>{{activeUser.name}}</strong></p>
+                        <p class="text-grey">Ultimo accesso</p>
+                    </div>
+                    <div class="flex-grow"></div>
+                    <div class="tools-container">
+                        <div>
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <i class="fa fa-paperclip" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- finestra di chat flex grow -->
+                <div class="chat-wall flex-grow">
+                    
+                    <div v-for="msg in activeUser.messages" :class="msg.status">
+                        <p>{{msg.text}}</p>
+                        <div class="arrow-down"></div>
+                    </div>
+
+                </div>
+
                 <!-- input testo -->
+                <div class="chat-text-input text-grey">
+                    <i class="fa fa-smile-o" aria-hidden="true"></i>
+                    <input class="flex-grow no-focus" type="text" placeholder="Scrivi un messaggio">
+                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                </div>
             </div>
 
         </div>
