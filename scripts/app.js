@@ -36,7 +36,7 @@ const app = new Vue({
                 status: 'sent'
             });
             //LA FUNZIONE NON FUNZIONA
-            setTimeout(function(){
+            setTimeout(() => {
                 this.activeUser.messages.push({
                     date: moment(),
                     text: "Ok!",
