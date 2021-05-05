@@ -8,13 +8,13 @@ const app = new Vue({
     },
     computed: {
         searchForText: function() {
-            return this.usersList.filter(element => element.name.includes(this.query))
+            return this.usersList.filter(element => element.name.toLowerCase().includes(this.query.toLowerCase()))
             .map((element) => {
                 if (this.query == "")
                     return element;
 
                 return {
-                    name: element.name.replace(this.query, "(" + this.query +")"),
+                    name: element.name,
                     avatar: element.avatar,
                     visible: element.visible,
                     messages: element.messages
