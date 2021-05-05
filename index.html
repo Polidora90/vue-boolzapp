@@ -49,13 +49,14 @@
                 <div class="input-container">
                     <div class="text-grey search-input">
                         <i class="fa fa-search" aria-hidden="true"></i>
-                        <input class="no-focus" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input class="no-focus" type="text" placeholder="Cerca o inizia una nuova chat"
+                        v-model="query" @input="searchForText">
                     </div>
                 </div>
 
                 <!-- lista contatti in flex grow-->
                 <div class="flex-grow contact-list">
-                    <div class="user" v-for="user in usersList">
+                    <div class="user" v-for="user in searchForText">
                         <div class="user-img">
                             <img :src="user.avatar" alt="">
                         </div>

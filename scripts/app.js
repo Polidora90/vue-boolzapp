@@ -3,7 +3,24 @@ const app = new Vue({
     data: {
         usersList: globalUsersList,
         activeUser: {},
+        query: "",
         myMessage: ""
+    },
+    computed: {
+        searchForText: function() {
+            return this.usersList.filter(element => element.name.includes(this.query))
+            .map((element) => {
+                if (this.query == "")
+                    return element;
+
+                return {
+                    name: element.name.replace(this.query, "(" + this.query +")"),
+                    avatar: element.avatar,
+                    visible: element.visible,
+                    messages: element.messages
+                }
+            })
+        }
     },
     methods: {
         selectUserChat(user) {
@@ -18,6 +35,7 @@ const app = new Vue({
                 text: this.myMessage,
                 status: 'sent'
             });
+            //LA FUNZIONE NON FUNZIONA
             setTimeout(function(){
                 this.activeUser.messages.push({
                     date: moment(),
