@@ -4,12 +4,12 @@ const app = new Vue({
         usersList: globalUsersList,
         activeUser: {},
         query: "",
-        myMessage: ""
+        myMessage: "",
     },
     computed: {
-        searchForText: function() {
+        searchForText: function () {
             return this.usersList.filter(element => element.name.toLowerCase().includes(this.query.toLowerCase()))
-            .map((element) => {
+            /* .map((element) => {
                 if (this.query == "")
                     return element;
 
@@ -19,7 +19,24 @@ const app = new Vue({
                     visible: element.visible,
                     messages: element.messages
                 }
-            })
+            }) */
+        },
+        selectedUserLastAccess() {
+            if (!this.activeUser.messages) {
+                return "";
+            };
+
+            const receivedMsg = this.activeUser.messages.filter((msg) => msg.status === 'received');
+
+            const lastMsg = receivedMsg[receivedMsg.length - 1];
+
+            if (!lastMsg) {
+                return "";
+            }
+
+            const lastMsgDate = lastMsg.date;
+
+            return this.formatTime(lastMsgDate);
         }
     },
     methods: {
@@ -31,11 +48,13 @@ const app = new Vue({
         },
         sendMsg() {
             this.activeUser.messages.push({
-                date: moment(),
+                date: moment().format("DD/MM/YYYY HH:mm:ss"),
                 text: this.myMessage,
                 status: 'sent'
             });
-            //LA FUNZIONE NON FUNZIONA
+
+            this.myMessage = "";
+
             setTimeout(() => {
                 this.activeUser.messages.push({
                     date: moment(),
@@ -44,6 +63,12 @@ const app = new Vue({
                 });
             }, 1000);
 
+        },
+        showPopup(msg) {
+            msg.popup = !msg.popup;
+        },
+        deleteMessage(index) {
+            this.activeUser.messages.splice(index, 1);
         }
     },
     mounted() {
