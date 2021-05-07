@@ -153,6 +153,15 @@ body {
     padding: 8px;
 }
 
+.search-cross {
+    width: 45px;
+}
+
+.search-cross .fa {
+    position: relative;
+    left: 8px;
+}
+
 /* lista contatti */
 .user {
     border: 1px solid #d7d7d7;
@@ -174,7 +183,13 @@ body {
     border-radius: 50%;
 }
 
-.contact-list {
+/* .contact-list {
+    overflow: auto;
+} */
+
+.contact-list-container {
+    display: flex;
+    flex-direction: column;
     overflow: auto;
 }
 

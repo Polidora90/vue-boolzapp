@@ -25,6 +25,56 @@ const globalUsersList = [
         ],
     },
     {
+        name: 'Luana',
+        avatar: 'imgs/avatar_io.jpg',
+        visible: true,
+        messages: [
+            {
+                date: '28/03/2020 10:10:40',
+                text: 'Ti interessa guadagnare un fisso mensile comodamente da casa solo mandando dei messaggi sui social? Dai unisciti al mio team!! :)',
+                status: 'received',
+                popup: false
+            },
+            {
+                date: '28/03/2020 10:20:10',
+                text: 'Credo che preferirei farmi fuoco, Luana.',
+                status: 'sent',
+                popup: false
+            },
+            {
+                date: '28/03/2020 16:15:22',
+                text: 'Non finisce qui.',
+                status: 'received',
+                popup: false
+            }
+        ],
+    },
+    {
+        name: 'Numero sconosciuto',
+        avatar: 'imgs/aloe-vera-1.jpg',
+        visible: true,
+        messages: [
+            {
+                date: '28/03/2020 10:10:40',
+                text: 'Ti interessa guadagnare un fisso mensile comodamente da casa solo mandando dei messaggi sui social? Dai unisciti al mio team!! :)',
+                status: 'received',
+                popup: false
+            },
+            {
+                date: '28/03/2020 10:20:10',
+                text: 'Luana, lo so che sei tu. Smettila.',
+                status: 'sent',
+                popup: false
+            },
+            {
+                date: '28/03/2020 16:15:22',
+                text: 'Non finisce qui.',
+                status: 'received',
+                popup: false
+            }
+        ],
+    },
+    {
         name: 'Fabio',
         avatar: 'imgs/avatar_2.jpg',
         visible: true,
@@ -48,7 +98,8 @@ const globalUsersList = [
                 popup: false
             }
         ],
-    }, {
+    }, 
+    {
         name: 'Samuele',
         avatar: 'imgs/avatar_3.jpg',
         visible: true,
@@ -90,6 +141,132 @@ const globalUsersList = [
                 status: 'received',
                 popup: false
             }
+        ],
+    },
+    {
+        name: 'Gigi',
+        avatar: 'imgs/avatar_4.jpg',
+        visible: true,
+        messages: [
+            {
+                date: '10/01/2020 15:30:55',
+                text: 'Pensa che con Vue non posso usare il getElementById',
+                status: 'sent',
+                popup: false
+            },
+            {
+                date: '10/01/2020 15:50:00',
+                text: 'Mi stai dando una notizia a dir poco sensazionale!',
+                status: 'received',
+                popup: false
+            },
+            {
+                date: '10/01/2020 15:52:00',
+                text: 'La Marianna la va in campagna',
+                status: 'sent',
+                popup: false
+            },
+            {
+                date: '10/01/2020 15:53:00',
+                text: 'Ok, hai sbagliato chat.',
+                status: 'received',
+                popup: false
+            },
+            {
+                date: '10/01/2020 15:55:00',
+                text: 'No, voglio mettere tanti messaggi nella finestra per vedere se riesco a fare l auto scroll',
+                status: 'sent',
+                popup: false
+            },
+            {
+                date: '10/01/2020 15:53:00',
+                text: 'Che siano abbastanza?',
+                status: 'received',
+                popup: false
+            },
+            {
+                date: '10/01/2020 15:57:00',
+                text: 'Non lo so Gigi. Non lo so.',
+                status: 'sent',
+                popup: false
+            },
+            {
+                date: '10/01/2020 15:57:00',
+                text: 'Non finisce qui.',
+                status: 'received',
+                popup: false
+            },
+
+        ],
+    },
+    {
+        name: 'Vincenzo',
+        avatar: 'imgs/avatar_5.jpg',
+        visible: true,
+        messages: [
+            {
+                date: '28/03/2020 10:10:40',
+                text: 'Domani ci vediamo alle 15:00.',
+                status: 'received',
+                popup: false
+            },
+            {
+                date: '28/03/2020 10:20:10',
+                text: 'Non se ne parla.',
+                status: 'sent',
+                popup: false
+            },
+            {
+                date: '28/03/2020 16:15:22',
+                text: 'Non finisce qui.',
+                status: 'received',
+                popup: false
+            }
+        ],
+    },
+    {
+        name: 'Marcello',
+        avatar: 'imgs/avatar_7.jpg',
+        visible: true,
+        messages: [
+            {
+                date: '28/03/2020 10:10:40',
+                text: 'Hai chiamato la segreteria per la prenotazione?',
+                status: 'received',
+                popup: false
+            },
+            {
+                date: '28/03/2020 10:20:10',
+                text: 'Basta! Devo sempre fare tutto io qui! Chiama tu!',
+                status: 'sent',
+                popup: false
+            },
+            {
+                date: '28/03/2020 16:15:22',
+                text: 'Non finisce qui.',
+                status: 'received',
+                popup: false
+            }
+        ],
+    },
+    {
+        name: 'Alessio',
+        avatar: 'imgs/avatar_8.jpg',
+        visible: true,
+        messages: [
+            {
+                date: '28/03/2020 10:10:40',
+                text: 'Ho fatto i panini con il formaggio, mi sono dimenticato della tua intolleranza al lattosio.',
+                status: 'received',
+                popup: false
+            },
+            {
+                date: '28/03/2020 10:20:10',
+                text: 'Non finisce qui.',
+                status: 'sent',
+                popup: false
+            },
+          
         ],
     },
 ];

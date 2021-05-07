@@ -51,19 +51,24 @@
                         <i class="fa fa-search" aria-hidden="true"></i>
                         <input class="no-focus" type="text" placeholder="Cerca o inizia una nuova chat"
                         v-model="query" @input="searchForText">
+                        <div class="search-cross text-grey" @click="query = ''">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </div>
 
                 <!-- lista contatti in flex grow-->
-                <div class="flex-grow contact-list">
-                    <div class="user"  :class="{selected: user.avatar == activeUser.avatar}" 
-                    v-for="user in searchForText">
-                        <div class="user-img">
-                            <img :src="user.avatar" alt="">
-                        </div>
-                        <div class="chat-preview flex-grow" @click="selectUserChat(user)">
-                            <p><strong>{{user.name}}</strong></p>
-                            <p class="text-grey">Anteprima non disponibile</p>
+                <div class="contact-list-container">
+                    <div class="contact-list">
+                        <div class="user"  :class="{selected: user.avatar == activeUser.avatar}" 
+                        v-for="user in searchForText">
+                            <div class="user-img">
+                                <img :src="user.avatar" alt="">
+                            </div>
+                            <div class="chat-preview flex-grow" @click="selectUserChat(user)">
+                                <p><strong>{{user.name}}</strong></p>
+                                <p class="text-grey">Anteprima non disponibile</p>
+                            </div>
                         </div>
                     </div>
                 </div>
