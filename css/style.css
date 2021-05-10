@@ -47,6 +47,7 @@ body {
 /* DUE BLOCCHI PRINCIPALI */
 .left-block {
     flex-basis: 30%;
+    overflow: hidden;
 }
 
 .right-block {
@@ -287,6 +288,8 @@ position: relative;
     align-items: center;
     z-index: 2;
     position: absolute;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }
 
 /* input testo chat */
